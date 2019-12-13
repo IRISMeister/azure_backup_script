@@ -7,14 +7,15 @@ warning=2
 
 status=$success
 
-log_path="/etc/postScript.log"   #path of log file
+log_path="/var/tmp/postScript.log"   #path of log file
 printf  "Logs:\n" > $log_path
 
-iris session iris1 -U%SYS "##class(Backup.General).ExternalThaw(0)"
+iris session iris -U%SYS "##class(Backup.General).ExternalThaw(0)"
 status=$?
 if [ $status -eq 5 ]; then
 echo "SYSTEM IS UNFROZEN"
 printf  "SYSTEM IS UNFROZEN\n" >> $log_path
+status=$success
 elif [ $status -eq 3 ]; then
 echo "SYSTEM UNFREEZE FAILED"
 printf  "SYSTEM UNFREEZE FAILED\n" >> $log_path
