@@ -22,5 +22,5 @@ elif [ $status -eq 3 ]; then
   status=$error
   iris session iris -U%SYS "##Class(Backup.General).ExternalThaw(0)"
 fi
-
+sync
 exit $status
