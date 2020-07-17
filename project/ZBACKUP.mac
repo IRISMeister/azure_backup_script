@@ -1,0 +1,16 @@
+ROUTINE ZBACKUP
+#;
+#; C:\InterSystems\IRIS\bin>iris runw iris FREEZE^^ZBACKUP %SYS
+#; C:\InterSystems\IRIS\bin>iris runw iris THAW^^ZBACKUP %SYS
+#; Evaluate %ERRORLEVEL%
+#;
+FREEZE() public {
+	s ^test=$ZDATETIME($H)
+	Set tSC=##Class(Backup.General).ExternalFreeze(0)
+	Do $SYSTEM.Process.Terminate(,'+tSC)
+}
+THAW() public {
+	s ^test=$ZDATETIME($H)
+	Set tSC=##Class(Backup.General).ExternalThaw(0)
+	Do $SYSTEM.Process.Terminate(,'+tSC)
+}
