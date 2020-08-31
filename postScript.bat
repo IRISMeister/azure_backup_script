@@ -4,7 +4,7 @@ SET error=1
 SET warning=2
 SET status=%success%
 
-SET log_path="c:\temp/postScript.log"
+SET log_path="c:\temp/BackupScript.log"
 echo Logs: > %log_path%
 
 C:\InterSystems\IRIS\bin\iris runw iris THAW^^ZBACKUP %%SYS

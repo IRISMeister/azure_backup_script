@@ -5,12 +5,12 @@ error=1
 warning=2
 status=$success
 
-log_path="/var/tmp/preScript.log"   #path of log file
+log_path="/var/tmp/BackupScript.log"   #path of log file
 printf  "Logs:\n" > $log_path
 
 
 # don't forget to enable O/S authentication
-iris session iris -U%SYS "##Class(Backup.General).ExternalFreeze(0)" >> $log_path
+iris session iris -U%SYS "##Class(Backup.General).ExternalFreeze(0)"
 status=$?
 if [ $status -eq 5 ]; then
   echo "SYSTEM IS FROZEN"

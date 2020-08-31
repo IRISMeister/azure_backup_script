@@ -6,7 +6,7 @@ error=1
 warning=2
 status=$success
 
-log_path="/var/tmp/postScript.log"   #path of log file
+log_path="/var/tmp/BackupScript.log"   #path of log file
 printf  "Logs:\n" > $log_path
 
 iris session iris -U%SYS "##class(Backup.General).ExternalThaw(0)"

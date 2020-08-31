@@ -4,7 +4,7 @@ SET error=1
 SET warning=2
 SET status=%success%
 
-SET log_path="c:\temp/preScript.log"
+SET log_path="c:\temp/BackupScript.log"
 echo Logs: > %log_path%
 
 rem %Service_Console have to be enabled and accept unauthorized login or O/S login
