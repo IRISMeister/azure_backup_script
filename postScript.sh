@@ -7,9 +7,8 @@ warning=2
 status=$success
 
 log_path="/var/tmp/BackupScript.log"   #path of log file
-printf  "Logs:\n" > $log_path
 
-iris session iris -U%SYS "##class(Backup.General).ExternalThaw(0)"
+iris session iris -U%SYS "##class(Backup.General).ExternalThaw(0)" |& tee -a $log_path
 status=$?
 if [ $status -eq 5 ]; then
   echo "SYSTEM IS UNFROZEN"
